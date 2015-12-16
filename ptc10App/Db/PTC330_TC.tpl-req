@@ -1,0 +1,13 @@
+# Autosave PV list for PTC10 PTC440 card
+
+$(P):$(TEC):Off
+$(P):$(TEC):SetSetPoint	
+
+$(P):$(TEC):Temp.HIHI
+$(P):$(TEC):Temp.LOLO
+$(P):$(TEC):Temp.HIGH
+$(P):$(TEC):Temp.LOW
+$(P):$(TEC):Temp.HHSV
+$(P):$(TEC):Temp.HSV
+$(P):$(TEC):Temp.LSV
+$(P):$(TEC):Temp.LLSV

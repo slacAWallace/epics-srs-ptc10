@@ -1,0 +1,15 @@
+# ptc10 IOC instance archive file
+
+# Generate archive PV list for IOC
+file ptc10-ioc.archive
+{
+	{ IOC = "CXI:PTC10:IOC:00" }
+}
+
+
+# Generate archive PV list for each serial device
+file PTC440_TECDriver.tpl-arch
+{
+	{P="CXI:PTC:01",TEC="TEC1"}
+	{P="CXI:PTC:01",TEC="TEC2"}
+}	

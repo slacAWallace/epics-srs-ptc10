@@ -1,0 +1,20 @@
+# This is an example protocol file
+# This protocol file was based on the Scientech Vector S310 Calorimeter/Power Meter
+# No need to keep this file unless you want to use it for examples.
+InTerminator  = CR;
+OutTerminator = CR LF;
+ReplyTimeout  =  2000;
+ReadTimeout   =  100;
+WriteTimeout  =  100;
+ExtraInput    = Ignore;
+
+#PTC440 TEC Driver
+get_val	{	out "\$1.Value?";			in "%f" }
+get_sp	{	out "\$1.pid.Setpoint?";			in "%f" }
+get_off {	out	"\$1.Off?"  }
+
+
+set_off {	out "\$1.Off"	}
+set_sp {	out "\$1.pid.Setpoint %5.3f"	}
+
+

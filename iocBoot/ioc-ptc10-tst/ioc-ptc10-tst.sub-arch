@@ -1,0 +1,15 @@
+# ptc10 IOC instance archive file
+
+# Generate archive PV list for IOC
+file ptc10-ioc.archive
+{
+	{ IOC = "TST:PTC10:IOC:00" }
+}
+
+
+# Generate archive PV list for each serial device
+file exampleDevice.tpl-arch
+{
+	{ P = "TST:EXP:XXX:01" }
+#	{ P = "TST:EXP:XXX:02" }
+}

@@ -1,0 +1,16 @@
+# ptc10 IOC instance autosave file
+
+# Generate autosave PV list for IOC specific PV's
+file ptc10-ioc.req
+{
+	{ IOC = "TST:PTC10:IOC:00" }
+}
+
+
+# Generate autosave PV list for each serial device
+file exampleDevice.tpl-req
+{
+	{ P = "TST:EXP:XXX:01" }
+#	{ P = "TST:EXP:XXX:02" }
+}
+

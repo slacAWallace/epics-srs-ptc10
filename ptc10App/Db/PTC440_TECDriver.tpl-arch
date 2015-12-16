@@ -1,0 +1,6 @@
+# Archive list for SRS PTC440 TEC driver card
+$(P):$(TEC):Voltage	1
+$(P):$(TEC):Current	1
+$(P):$(TEC):Temp	1
+$(P):$(TEC):SetPoint	10 monitor
+

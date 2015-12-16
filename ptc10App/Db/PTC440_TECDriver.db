@@ -1,0 +1,62 @@
+#For a channel on the PTC 10
+
+
+#Readbacks
+record(ai, "$(P):$(TEC):Voltage"){
+field(DESC, "TEC Voltage")
+field(DTYP, "stream")
+field(INP,	"@ptc10.proto get_val($(VMON)) $(P)")
+field(SCAN, ".5 second")
+field(EGU, "V")
+field(FLNK, "$(P):$(TEC):Current")
+}
+
+record(ai, "$(P):$(TEC):Current"){
+field(DESC, "TEC Current")
+field(DTYP, "stream")
+field(INP,	"@ptc10.proto get_val($(TEC)) $(P)")
+field(EGU, "A")
+field(FLNK, "$(P):$(TEC):Temp")
+}
+
+record(ai, "$(P):$(TEC):Temp"){
+field(DESC, "Temperature readback")
+field(DTYP, "stream")
+field(INP,	"@ptc10.proto get_val($(RB)) $(P)")
+field(EGU, "C")
+field(FLNK, "$(P):$(TEC):SetPoint")
+field(HHSV, "MAJOR")
+field(LLSV, "MAJOR")
+field(HSV,  "MINOR")
+field(LSV,  "MINOR")
+}
+
+record(ai, "$(P):$(TEC):SetPoint"){
+field(DESC, "TEC Current")
+field(DTYP, "stream")
+field(INP,	"@ptc10.proto get_sp($(TEC)) $(P)")
+field(EGU, "A")
+#field(FLNK, "$(P):$(TEC):Temp")
+}
+
+
+#Controls
+record(bo, "$(P):$(TEC):Off"){
+field(DESC, "Output Enable")
+field(ZNAM, "Off")
+field(ONAM, "Off")
+field(DTYP, "stream")
+field(OUT, "@ptc10.proto set_off($(TEC)) $(P)")
+}
+
+record(ao, "$(P):$(TEC):SetSetPoint"){
+field(DESC, "TEC Temp Setpoint")
+field(DTYP, "stream")
+field(OUT, "@ptc10.proto set_sp($(TEC)) $(P)")
+field(EGU, "C")
+field(HOPR, "22")
+field(LOPR, "0")
+field(OMSL, "supervisory")
+field(LINR, "NO CONVERSION")
+field(FLNK, "$(P):$(TEC):GetSetPoint.PROC")
+}

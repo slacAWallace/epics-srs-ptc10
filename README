@@ -1,0 +1,35 @@
+
+#######################
+Serial Settings
+######################
+9600
+8n1
+hardware
+Regular digi adapter, DE-9 to Rj45
+
+
+PTC 10
+The SRS temperature controller can be configured using a variety of cards which are plugged into the back.
+There are 5 slots.
+Every channel on the PTC10 is given a default name, usually with the slot number as the prefix and A, B, C, ... as the suffix.
+Adding to the complexity of the system is the ability to rename the channels as you see fit.
+
+CRITICAL: To make the IOC work, you must make sure your channel names match what is actually on the controller.
+
+########################################
+PTC440, Thermoelectric device driver
+########################################
+Each PTC440 card has a TEC driver channel, a voltage sensing channel (this is the voltage on the actual TEC itself),
+and some sort of temperature readback device channel (used for the PID).
+
+To add a PTC440 to your IOC, add the following to your st.cmd:
+dbLoadRecords( "db/PTC440_TECDriver.db", "TEC=<TEC Driver>,RB=<Temperature Readback>,VMON=<Voltage Sense>,P=<Asyn Port and PV prefix>" )
+
+
+########################################
+PTC330 Thermocouple card
+########################################
+Each PTC330 card has 4 thermocouple channels that can be used for temperature readback.
+
+To add a PTC440 to your IOC, add the following to your st.cmd:
+dbLoadRecords( "db/PTC330_TC.db", "A=<A Thermocouple Name>,B=<B Thermocouple Name>,C=<C Thermocouple Name>,D=<D Thermocouple Name>,P=<Asyn Port and PV prefix>" )

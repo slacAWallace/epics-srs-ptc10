@@ -1,0 +1,6 @@
+# Archive list for SRS PTC330 Thermocouple card
+$(P):$(A):Temperature	1
+$(P):$(B):Temperature	1
+$(P):$(C):Temperature	1
+$(P):$(D):Temperature	1
+

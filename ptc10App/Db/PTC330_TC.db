@@ -1,0 +1,36 @@
+#Records for the PTC330 thermocouple readback card
+# Each PTC330 has 4 channels (A, B, C, D) the default prefix is the card slot.
+# Otherwise make sure to use the name that's actually been assigned.
+
+
+record(ai, "$(P):$(A):Temperature"){
+field(DESC, "Temperature Ch A readback")
+field(DTYP, "stream")
+field(INP,	"@ptc10.proto get_val($(A)) $(P)")
+field(EGU, "C")
+field(SCAN, ".5 second")
+field(FLNK, "$(P):$(B):Temperature")
+}
+
+record(ai, "$(P):$(B):Temperature"){
+field(DESC, "Temperature Ch B readback")
+field(DTYP, "stream")
+field(INP,	"@ptc10.proto get_val($(B)) $(P)")
+field(EGU, "C")
+field(FLNK, "$(P):$(C):Temperature")
+}
+
+record(ai, "$(P):$(C):Temperature"){
+field(DESC, "Temperature Ch C readback")
+field(DTYP, "stream")
+field(INP,	"@ptc10.proto get_val($(C)) $(P)")
+field(EGU, "C")
+field(FLNK, "$(P):$(D):Temperature")
+}
+
+record(ai, "$(P):$(D):Temperature"){
+field(DESC, "Temperature Ch D readback")
+field(DTYP, "stream")
+field(INP,	"@ptc10.proto get_val($(D)) $(P)")
+field(EGU, "C")
+}
