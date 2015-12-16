@@ -1,20 +1,5 @@
 #!../../bin/linux-x86_64/ptc10
 
-## ToDo: Remove this comment after checking these macros!
-##
-## The following substitutions can be done via makeBaseApp.pl
-## If they weren't, do them before releasing your IOC
-##
-## Replace _ USER _ with your userid
-##
-## Replace _ APPNAME _ with the name of the application
-##
-## Replace _ IOC _ with the network name of the IOC
-##
-## Replace _ IOCPVROOT _ with the PV prefix used for
-## iocAdmin PV's on this IOC
-## ex. AMO:R15:IOC:23
-##
 
 < envPaths
 epicsEnvSet( "ENGINEER",  "Alex Wallace (awallace)" )
@@ -35,7 +20,7 @@ ptc10_registerRecordDeviceDriver(pdbbase)
 
 # Configure each device
 epicsEnvSet( "DEV1", "TST:PTC:01" )
-drvAsynIPPortConfigure( "$(DEV1)", "digi-sds-01:2112 TCP", 0, 0, 0 )
+drvAsynIPPortConfigure( "$(DEV1)", "172.21.42.97:23 TCP", 0, 0, 0 )
 
 
 # Load record instances

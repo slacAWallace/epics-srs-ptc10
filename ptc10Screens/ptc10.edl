@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 664
-y 715
+x 666
+y 737
 w 466
 h 566
 font "helvetica-medium-r-12.0"
@@ -99,35 +99,6 @@ yPoints {
   0 39
   1 39
   2 39
-}
-endObjectProperties
-
-# (Related Display)
-object relatedDisplayClass
-beginObjectProperties
-major 4
-minor 4
-release 0
-x 409
-y 7
-w 47
-h 16
-fgColor index 14
-bgColor index 4
-topShadowColor index 1
-botShadowColor index 11
-font "helvetica-medium-r-12.0"
-buttonLabel "Home"
-numPvs 4
-numDsps 1
-displayFileName {
-  0 "$(HOME)"
-}
-setPosition {
-  0 "parentWindow"
-}
-replaceSymbols {
-  0 1
 }
 endObjectProperties
 

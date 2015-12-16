@@ -19,7 +19,7 @@ ptc10_registerRecordDeviceDriver(pdbbase)
 
 # Configure each device
 epicsEnvSet( "DEV1", "CXI:PTC:01" )
-drvAsynIPPortConfigure( "$(DEV1)", "172.21.44.246:23 TCP", 0, 0, 0 )
+drvAsynIPPortConfigure( "$(DEV1)", "172.21.44.65:23 TCP", 0, 0, 0 )
 
 
 # Load record instances
